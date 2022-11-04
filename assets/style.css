@@ -1,0 +1,111 @@
+.time {
+ text-align:center;
+ justify-content:space-between;
+}
+.main {
+    display:flex;
+    justify-content:space-between;
+} 
+#high-scores {
+display:flex;
+align-items:center;
+justify-content:center;
+border:1px solid white;
+background-color: white;
+color:#5e3d92;
+}
+
+.code1 {
+    display:flex; 
+    justify-content:center; 
+}
+.beginquiz {
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    align-items:center;
+    width:70%;
+}
+#startbtn {
+    background-color:#5e3d92;
+    color:white;
+    border:1px solid #5e3d92;
+    border-radius: 5px;
+     max-width:fit-content; 
+     font-size:15px;
+    font-family:sans-serif;
+    font-weight:bold; 
+    padding:0px 10px; 
+    margin: 5px; 
+    cursor: pointer;
+}
+#button_1 {
+    background-color:#5e3d92;
+    color:white;
+    border:1px solid #5e3d92;
+    border-radius:5px;
+    max-width: fit-content;
+     font-size:15px; 
+     font-family: sans-serif;
+     font-weight:bold;
+    padding: 0px 10px;
+    margin:5px;
+    cursor:pointer;
+}
+.question_1 {
+    display:flex;
+    flex-wrap:wrap; 
+    justify-content:center;
+}
+#button_2 {
+    background-color:#5e3d92;
+    color:white;
+    border:1px solid #5e3d92;
+    border-radius:5px;
+    max-width: fit-content;
+    font-size:15px;
+    font-family: sans-serif;
+    font-weight:bold;
+    padding: 0px 10px;
+    margin:5px;
+    cursor:pointer;  
+}
+#button_3 {
+    background-color:#5e3d92;
+    color:white;
+    border:1px solid #5e3d92;
+    border-radius:5px;
+    max-width: fit-content;
+     font-size:15px; 
+     font-family: sans-serif;
+     font-weight:bold;
+    padding: 0px 10px;
+    margin:5px;
+    cursor:pointer;
+}
+#button_4 {
+    background-color:#5e3d92;
+    color:white;
+    border:1px solid #5e3d92;
+    border-radius:5px;
+    max-width: fit-content;
+     font-size:15px;
+    font-family: sans-serif;
+    font-weight:bold;
+    padding: 0px 10px;
+    margin:5px;
+    cursor:pointer; 
+}
+#button_5 {
+    background-color:#5e3d92;
+    color:white;
+    border:1px solid #5e3d92;
+    border-radius:5px;
+    max-width: fit-content; 
+    font-size:15px;
+     font-family: sans-serif;
+     font-weight:bold;
+    padding: 0px 10px;
+    margin:5px;
+    cursor:pointer;
+}

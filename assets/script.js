@@ -1,38 +1,97 @@
-var scoreObjectString = localStorage.getItem("scoreObject");
- 
-var score = 0;
-var initials = "";
-try {
-scoreObject=JSON.parse(scoreObjectString);
-var scoreObjectScore = scoreObject.score;
-var scoreObjectName=scoreObject.scoreObjectName;
-var scoreObjectScoreString = scoreObjectScore.toString();
-var scoreObjectInitialsString = scoreObjectsInitals.toString();
-var scoreObjectScoreStringSpace = scoreObjectScoreString + "";
-var scoreObjectNameStringSpace = scoreObjectNameSting + "";
-} catch(error) {
-  var scoreObjectScoreStringSpace = "";
-  var scoreObjectNameStringSpace = "";
+var scoreObjectString = document.querySelector("scoreObject");
+var pass =document.querySelector(".pass");
+var fail = document.querySelector(".fail");
+var timerElement = document.querySelector(".timer-count");
+var startButton = document.querySelector("#start-button");
+
+
+function myFunction() {
+  alert ("Hello World!");
 }
- 
- 
-var div_0 = document.createElement("div");
-div_0.id = "div_0";
-document.body.appendChild(div_0);
- 
-div_0.style.display = "flex";
-div_0.style.justifyContent = "space-between";
- 
-var button_0 = document.createElement("button");
-button_0.id ="button_0";
-button_0.textContent = "High Scores";
-div_0.appendChild(button_0);
-button_0.setAttribute(
-  "style",
-  "display:flex;align-items:center; justify-content:center;border: 1px solid white; background-color: white; color:black;"
-);
-var backbtn = document.createElement("button");
-backbtn.id = "backbtn";
-backbtn.textContent = "Back";
-div_0.appendChild(backbtn);
+startButton.addEventListener("click", myFunction);
+
+var name = "";
+var score = 0;
+var passCounter = 0;
+var failCounter = 0;
+var timer;
+var timerCount;
+
+
+function init() {
+  getPass();
+  getFails();
+}
+
+function startQuiz() {
+  timerCount=60;
+  startButton.disabled = true;
+  renderBlanks()
+  startTimer()
+}
+
+function passQuiz() {
+  wordBlank.textContent = "You Passed!"
+  passCounter++
+  startButton.disabled =
+  setPasses()
+}
+
+function failQuiz() {
+  wordBlank.textContent = "You Failed!"
+  failCounter++
+  startButton.disabled = 
+  setFails()
+}
+
+function startTimer() {
+  timer = setInterval(function() {
+    timerCount--;
+    timerElement.textContent = timerCount;
+    if(timerCount >= 0){
+      if (isPass && timerCount >0) {
+        clearInterval(timer);
+        passQuiz()
+      }
+    } 
+    if (timerCount === 0) {
+      clearInterval(timer);
+      failQuiz();
+    }
+  })
+}
+
+function renderBlanks() {
+
+}
+
+
+function setPasses() {
+  pass.textContent = passCounter;
+  localStorage.setItem("passCount", passCounter);
+}
+
+function setFails(){
+  fail.textContent = failCounter;
+  localStorage.setItem("failCount",failCounter);
+}
+
+function getPasses() {
+  var storedPasses = localStorage.getItem("passCount");
+  if (storedPasses === null) {
+    passCounter = 0;
+  }else {
+    passCounter = storedPasses;
+  }
+  pass.textContent = passCounter;
+}
+function getFails() {
+  var storedFails = localStorage.get("failCount");
+  if (storedFails === null) {
+    failCounter = 0;
+  }else {
+    failCounter = storedFails;
+  }
+  fail.textContent = failCounter;
+}
 
