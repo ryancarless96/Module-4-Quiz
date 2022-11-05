@@ -104,13 +104,13 @@ function myFunction() {
   ("Have a nice day!")
 }
 
-pass("myBtn").addEventListener("click", startQuiz);
+pass.addEventListener("click", startQuiz);
 
-fail("myBtn").addEventListener("click",startQuiz);
+fail.addEventListener("click",startQuiz);
 
-startButton("myBtn").addEventListener("click", startQuiz);
+startButton.addEventListener("click", startQuiz);
 
-timerElement("myBtn").addEventListener("click", startQuiz);
+timerElement.addEventListener("click", startQuiz);
 
 init();
 
