@@ -1,14 +1,8 @@
-var scoreObjectString = document.querySelector("scoreObject");
 var pass =document.querySelector(".pass");
 var fail = document.querySelector(".fail");
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector("#start-button");
 
-
-function myFunction() {
-  alert ("Hello World!");
-}
-startButton.addEventListener("click", myFunction);
 
 var name = "";
 var score = 0;
@@ -61,8 +55,16 @@ function startTimer() {
   })
 }
 
-function renderBlanks() {
-
+function highScores() {
+  chosenScore = scores[Math.floor(Math.random() * score.length)];
+  numbersInChosenScore = chosenScore.split("");
+  numScores = numbersInChosenScore.length;
+  highScores = []
+  
+  for(var i = 0; i < numScores; i++) {
+    highScores.push("");
+  }
+  highScores.textContent = highScores.join("")
 }
 
 
@@ -95,3 +97,31 @@ function getFails() {
   fail.textContent = failCounter;
 }
 
+function pass() {
+}
+
+function myFunction() {
+  ("Have a nice day!")
+}
+
+pass("myBtn").addEventListener("click", startQuiz);
+
+fail("myBtn").addEventListener("click",startQuiz);
+
+startButton("myBtn").addEventListener("click", startQuiz);
+
+timerElement("myBtn").addEventListener("click", startQuiz);
+
+init();
+
+var resetButton = document.querySelector(".reset-button");
+
+function resetQuiz() {
+  passCounter = 0;
+  failCounter = 0;
+
+  setPasses()
+  setFails()
+
+  resetButton.addEventListener("click",resetQuiz);
+}
