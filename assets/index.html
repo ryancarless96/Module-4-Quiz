@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Coding Quiz Challenge</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+
+<body>
+  <div class="outer-container">
+    <button id="high-scores"> View your high scores</button>
+    <div class="top-bar">
+      <p> Timer: 60 </p>
+    </div>
+    <div class="inner-container">
+      <header class="quiz">
+        <h1>Challenge yourself with this Quiz!</h1>
+        <p>Try to answer the following code-related questions within the time limit.Keep in mind that incorrect answers
+          will penalize your score/time by ten seconds! </p>
+        <button id="startbtn"> Start Quiz </button>
+        <button id="back-btn"> Go Back</button>
+      </header>
+    </div>
+    <main>
+      <section class="quiz-finish-scrren">
+        <h2> Quiz is Over!</h2>
+        <p>Your Score is:00</p>
+        <div>
+          <label for="">Enter initials:</label>
+          <input type="text">
+          <button> Submit </button>
+        </div>
+      </section>
+      <section class="highscores-screen">
+        <h2> Highscores: </h2>
+      </section>
+      <section class="question-screen">
+        <h2>Question</h2>
+        <ul>
+          <li><button id="button_2">Answer 1</button></li>
+          <li><button id="button_3">Answer 2</button></li>
+          <li><button id="button_4">Answer 3</button></li>
+          <li> <button id="button_5">Answer 4</button></li>
+        </ul>
+        <ol>
+          <li> </li>
+        </ol>
+      </section>
+    </main>
+  </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>
