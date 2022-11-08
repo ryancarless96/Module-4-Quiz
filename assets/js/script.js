@@ -23,8 +23,7 @@ function init() {
 
 function startQuiz() {
   console.log('Begin quiz')
-  timerCount = 60;
-
+  timerCount = 60000;
   startButton.disabled = true;
   startTimer()
 }
