@@ -16,19 +16,6 @@ var timerCount;
 
 var answers = ["cd", "touch index.html", "ls", "git commit -m", "git clone", "git pull origin main", "mkdir", "git add -A"];
 
-function init() {
-  getPass();
-  getFails();
-}
-
-function startQuiz() {
-  console.log('Begin quiz')
-  timerCount = 60000;
-  startButton.disabled = true;
-  startTimer()
-}
-
-
 function selectAnswer() {
   var questions = [
     {
@@ -68,15 +55,34 @@ function selectAnswer() {
       },
     }, 
   ];
-  return questions;
+return questions;
+  
 }
+
+function refertoQuestions() {
+  answers = ["cd", "touch index.html", "ls", "git commit -m", "git clone", "git pull origin main", "mkdir", "git add -A"]
+}
+
+
+function init() {
+  getPass();
+  getFails();
+}
+
+function startQuiz() {
+
+  console.log('Begin quiz')
+  timerCount = 60000;
+  startButton.disabled = true;
+  startTimer()
+}
+
 // var quiz = [
 //   [1, "What adds the file to be commited?", "git add -A"],
 //   [2, "How do you create a new folder?", "cd"],
 //   [3, "What do we use to clone the repository?", "git clone"],
 //   [4, "How do you get the latest from the repo?", "git pull origin main"]
 // ];
-
 
 
 function passQuiz() {
