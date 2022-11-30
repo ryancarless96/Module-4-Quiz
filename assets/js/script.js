@@ -1,7 +1,8 @@
-var startButton = document.querySelector("#start-button");
-var resetButton = document.querySelector(".reset-button");
+var startButton = document.querySelector("#startbtn");
+var resetButton = document.querySelector(".back-btn");
 var score = document.querySelector(".score");
-
+var questions;
+var currentQuestionindex = 0;
 
 var timerElement = document.querySelector(".timer-count");
 var passQuiz = document.querySelector(".pass");
@@ -17,7 +18,7 @@ var timerCount;
 var answers = ["cd", "touch index.html", "ls", "git commit -m", "git clone", "git pull origin main", "mkdir", "git add -A"];
 
 function selectAnswer() {
-  var questions = [
+  questions = [
     {
       question1: "What adds the file to be commited?",
       answers: {
@@ -65,7 +66,7 @@ function refertoQuestions() {
 
 
 function init() {
-  getPass();
+  getPasses();
   getFails();
 }
 
@@ -75,6 +76,11 @@ function startQuiz() {
   timerCount = 60000;
   startButton.disabled = true;
   startTimer()
+  displayQuiz();
+}
+function displayQuiz() {
+  var currentQuestion = questions[currentQuestionindex];
+  console.log(currentQuestion);
 }
 
 // var quiz = [
@@ -141,12 +147,13 @@ function setFails() {
 
 function getPasses() {
   var storedPasses = localStorage.getItem("passCount");
+  console.log(storedPasses);
   if (storedPasses === null) {
     passCounter = 0;
   } else {
     passCounter = storedPasses;
   }
-  pass.textContent = passCounter;
+  passQuiz.textContent = passCounter;
 }
 function getFails() {
   var storedFails = localStorage.get("failCount");
@@ -158,9 +165,9 @@ function getFails() {
   fail.textContent = failCounter;
 }
 
-startButton.addEventListener("click", startQuiz)
+startbtn.onclick=startQuiz;
 
-init();
+//init();
 
 
 function resetQuiz() {
